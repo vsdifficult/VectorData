@@ -1,5 +1,5 @@
 # Используем официальный образ Python 3.9 как базовый образ
-FROM python:3.9-slim
+FROM python:3.12
 
 # Устанавливаем необходимые пакеты
 RUN apt-get update && apt-get install -y build-essential
@@ -15,4 +15,4 @@ ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
 # Устанавливаем команду для запуска приложения
-CMD ["python", "run.py"]
+CMD ["python", "./src/main.py"]
