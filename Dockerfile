@@ -1,8 +1,11 @@
-# Используем официальный образ Python 3.9 как базовый образ
+# Используем официальный образ Python 3.12 как базовый образ
 FROM python:3.12
 
 # Устанавливаем необходимые пакеты
 RUN apt-get update && apt-get install -y build-essential
+
+# Устанавливаем необходимые Python библиотеки
+RUN pip install sentence-transformers chromadb fastapi sentence_transformers pydantic uvicorn 
 
 # Копируем файлы проекта в контейнер
 COPY . /app
