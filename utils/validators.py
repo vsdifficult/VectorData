@@ -1,10 +1,16 @@
 class Validators:
     @staticmethod
+    def validate_document_id(doc_id, existing_ids):
+        if doc_id in existing_ids:
+            raise ValueError("Document ID must be unique.")
+
+    @staticmethod
     def validate_text(text):
         if not isinstance(text, str) or len(text) == 0:
             raise ValueError("Text must be a non-empty string.")
         
-        if len(text) > 1000:  # Пример ограничения на длину текста
+        if len(text) > 1000: 
+
             raise ValueError("Text is too long.")
 
     @staticmethod

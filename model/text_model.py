@@ -1,4 +1,5 @@
 from sklearn.feature_extraction.text import TfidfVectorizer
+from scipy.sparse import csr_matrix
 
 class TextModel:
     def __init__(self):
@@ -8,4 +9,4 @@ class TextModel:
         self.vectorizer.fit(documents)
 
     def transform(self, documents):
-        return self.vectorizer.transform(documents).toarray()
+        return self.vectorizer.transform(documents)
