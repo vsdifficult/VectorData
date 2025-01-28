@@ -1,3 +1,4 @@
+import numpy as np
 class Validators:
     @staticmethod
     def validate_document_id(doc_id, existing_ids):
